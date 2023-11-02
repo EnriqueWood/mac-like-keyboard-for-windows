@@ -1,0 +1,40 @@
+﻿; Enable macOS-like tilde mode using Command+E (In windows it would be Win + E)
+#e::SetTildeMode()
+
+SetTildeMode() {
+    key := InputHook("L1 M")
+    key.Start()
+    key.Wait()
+    if (key.Input = "a") {
+        SendInput("á")
+    } else if (key.Input = "A") {
+        SendInput("Á")
+    } else if (key.Input = "e") {
+        SendInput("é")
+    } else if (key.Input = "E") {
+        SendInput("É")
+    } else if (key.Input = "i") {
+        SendInput("í")
+    } else if (key.Input = "I") {
+        SendInput("Í")
+    } else if (key.Input = "o") {
+        SendInput("ó")
+    } else if (key.Input = "O") {
+        SendInput("Ó")
+    } else if (key.Input = "u") {
+        SendInput("ú")
+    } else if (key.Input = "U") {
+        SendInput("Ú")
+    } else if (key.Input = " " || key.Input = "") {  ; When Alt+E is pressed and then space key, only tilde is written
+        SendInput("´")
+    } else {  ; not a vowel
+        SendInput(key.Input)
+    }
+}
+
+; Copy, cut, paste, undo, and close with Alt combinations
+~Alt & x::SendInput("{Ctrl down}x{Ctrl up}")
+~Alt & c::SendInput("{Ctrl down}c{Ctrl up}")
+~Alt & v::SendInput("{Ctrl down}v{Ctrl up}")
+~Alt & z::SendInput("{Ctrl down}z{Ctrl up}")
+~Alt & w::SendInput("{Ctrl down}w{Ctrl up}")
