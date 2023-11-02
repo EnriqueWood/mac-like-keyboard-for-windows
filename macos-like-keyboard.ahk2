@@ -32,10 +32,13 @@ SetTildeMode() {
     }
 }
 
-; Copy, cut, paste, undo, and close with Alt combinations
+; Copy, cut, paste, undo, select all, and close with Alt combinations
 ~Alt & x::SendInput("{Ctrl down}x{Ctrl up}")
 ~Alt & c::SendInput("{Ctrl down}c{Ctrl up}")
 ~Alt & v::SendInput("{Ctrl down}v{Ctrl up}")
 ~Alt & z::SendInput("{Ctrl down}z{Ctrl up}")
 ~Alt & w::SendInput("{Ctrl down}w{Ctrl up}")
 ~Alt & a::SendInput("{Ctrl down}a{Ctrl up}")
+
+; New tab with Alt
+~Alt & t::SendInput("{Ctrl down}t{Ctrl up}")
