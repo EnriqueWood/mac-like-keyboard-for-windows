@@ -38,3 +38,4 @@ SetTildeMode() {
 ~Alt & v::SendInput("{Ctrl down}v{Ctrl up}")
 ~Alt & z::SendInput("{Ctrl down}z{Ctrl up}")
 ~Alt & w::SendInput("{Ctrl down}w{Ctrl up}")
+~Alt & a::SendInput("{Ctrl down}a{Ctrl up}")
